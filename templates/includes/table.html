@@ -1,0 +1,20 @@
+<table class="table table-bordered mt-5 bg-white shadow-sm rounded-3">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Жанры</th>
+            <th>Причина блокировки</th>
+            <th>Метод обхода</th>
+        </tr>
+    </thead>
+    <tbody class="fw-500">
+        {% for anime in animes %}
+            <tr class="{{ anime.get_row_css_class }}">
+                <td>{{ anime }}</td>
+                <td>{% for genre in anime.genres.all %}{{ genre.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</td>
+                <td>{{ anime.ban_reason }}</td>
+                <td>{{ anime.bypass_method|safe }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

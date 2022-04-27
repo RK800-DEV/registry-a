@@ -1,0 +1,1 @@
+web: gunicorn registrya.wsgi --log-file -

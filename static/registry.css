@@ -1,0 +1,22 @@
+body { background: #FFFEF9; font-family: Inter; color: #000000; }
+
+.fw-900 { font-weight: 900; }
+.fw-700 { font-weight: 700; }
+.fw-500 { font-weight: 500; }
+.fw-400 { font-weight: 400; }
+.fw-300 { font-weight: 300; }
+.fw-200 { font-weight: 200; }
+
+
+/* Blocks */
+.welcomeBlock {
+    border-radius: 0px;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.btn { transition: unset; }
+.btn:focus { outline: none !important; box-shadow: none !important; }
+
+.blocked-anime { background-color: #f8ccc8; }
+.open-anime { background-color: #bff0de; }

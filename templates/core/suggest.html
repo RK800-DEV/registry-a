@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "includes/navbar.html" %}
+{% load crispy_forms_tags %}
+<div class="container mb-3">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <h1 class="fw-900">Предложите аниме, которое Вы считаете уже заблокированным или же под риском блокирования в Республике Казахстан.</h1>
+            <h5>Это очень поможет нам в анализе а также в периодическом обновлении списка.</h5>
+            <hr>
+            <form method="POST">
+                {% load bootstrapize %}
+                {% for message in messages %}
+                <div class="fw-700 alert alert-{{ message.tags|message_bootstrapize }} mb-2">
+                    {{ message }}
+                </div>
+                {% endfor %}
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-primary btn-lg" type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
